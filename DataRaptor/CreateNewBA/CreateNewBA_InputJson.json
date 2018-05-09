@@ -1,0 +1,35 @@
+{
+    "BillingDetails": {
+        "AccountInformation": {
+            "AccountName": null,
+            "ParentAccId": null,
+            "ParentAccountName": null
+        },
+        "BillingProfile": {
+        },
+        "ContactPreferences": {
+        },
+        "DirectoryListing": {
+        },
+        "Loyality": {
+        },
+        "TypeOfBA": {
+            "BAType": null
+        }
+    },
+    "ContextId": null,
+    "NextStepAfterBA": {
+    },
+    "timeStamp": null,
+    "userId": null,
+    "userName": null,
+    "userProfile": null,
+    "vlcPersistentComponent": {
+    },
+    "vlcTimeTracking": {
+        "BillingDetails": null,
+        "DataRaptorExtractAction1": null,
+        "NextStepAfterBA": null,
+        "SetValues1": null
+    }
+}
