@@ -1,0 +1,85 @@
+// include the File System module.
+var fs = require('fs');
+// The Path module provides a way of working with directories and file paths. 
+var path = require('path');
+// include schema module
+//var schemas=require('./schema');
+
+// include ajv package
+var ajv = require('ajv')({allErrors: true});
+
+// file absolute path
+var absolutepath = 'D:\\jsontest5\\OmniScript';
+var map = {};	//map is a global object.
+
+// function to crawl the directories
+function crawl(dir) {
+	// check if dir is a file and call a function to open a file
+	if(fs.statSync(dir).isFile()) {
+		try {	
+			openFile(dir);			
+		} catch(error) {
+			console.log(error);
+		}		
+    } else { 	// dir is directory		
+		// console.log(indent, path.basename(dir));
+		// save all the files and directories of dir in files variable
+		var files = fs.readdirSync(dir);
+		// for each object in the files call crawl() function again
+		for(var file in files) {
+			//console.log(files[file]);
+			crawl(path.join(dir, files[file]));
+		}
+	}		
+}
+
+// function to open a file
+function openFile(filepath) {
+	// read the content of a file.
+	/* var contents = fs.readFileSync(filepath);
+	var jsonContent = JSON.parse(contents); */
+	
+	var jsonContent = require(filepath);
+	var key = jsonContent["%vlocity_namespace%__Type__c"];
+	// check if key exist in the map if not add the key into the map.
+	
+	if(path.basename(filepath).match(/DataPack.json/i)  
+			|| path.basename(filepath).match(/PropertySet.json/i) ) {
+				
+		return;
+	}
+	var schema = 'Omniscript';
+	if(!map.hasOwnProperty(key)) {
+		map[key] = [];
+	}	
+	map[key].push(path.basename(filepath));
+	
+	schema = schema + key.replace(/\s/g,'');
+	console.log('key type--', schema);
+	//schemachecker(jsonContent, schema, path.basename(filepath));	
+}
+
+// function to validate schema with file content.
+var schemachecker = function(fileContent, schema, filename)	{
+	
+	var validate = ajv.compile(schemas[schema]);  //given schema
+	var valid = validate(fileContent); 
+
+	if (!valid) {
+		//,validate.errors
+		console.log('JSON File '+ filename +' is not Fine');
+	}
+	else	{
+	console.log('JSON File '+ filename +' is Fine');
+
+	}
+}
+
+
+
+//console.log('is file ?', fs.statSync(dir).isFile());
+//crawl('D:\\MININT', '   ');
+
+crawl(absolutepath);
+console.log(map);
+//C:\\Users\\sivakumar.miriyala\\Desktop\\Velocity\\example_vlocity_build\\example_vlocity_build\\OmniScript
