@@ -1,0 +1,37 @@
+var fs=require('fs'),
+cc=[],
+errorcatcher={
+	[["minLength","should NOT be shorter than 1 characters"]]:"The field shouldn't be left blank",
+	[["pattern",'should match pattern "^([A-Z]{1}[A-Za-z_0-9]*)+$"']]:"Follow proper Naming convention",
+},
+errorlist=[{
+	"code":"2",
+	"property":"minLength",
+	"remedy":"The field shouldn't be left blank",
+},
+{
+	"code":"1",
+	"property":"pattern",
+	"remedy":"Follow proper Naming convention",
+}];
+var addcontent= (content) => {
+	
+if(errorcatcher.hasOwnProperty([[content[0]["keyword"],content[0]["message"]]])){
+	content[0]["errorcode"]= errorcatcher[[content[0]["keyword"],content[0]["message"]]];
+}
+cc.push(content[0]);
+};
+
+var savehtml = () => {
+
+var cont= "var app = angular.module('myApp', ['ui.bootstrap']);app.controller('reportCtrl', function($scope) {$scope.names= "+  JSON.stringify(cc,null,2)  +" ; $scope.errorcodes= "+  JSON.stringify(errorlist,null,2)  +" ;});";
+//console.log(JSON.stringify(errorslist,null,2));
+console.log(cc);
+		fs.writeFile('myPage.js', cont, (err) => {
+		  if (err) throw err;
+		  console.log('Saved!');
+		});
+}
+module.exports.addcontent=addcontent;
+module.exports.savehtml=savehtml;
+
