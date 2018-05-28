@@ -1,0 +1,123 @@
+var path = require('path');
+var fs = require('fs');
+var ajv = require('ajv')({allErrors: true});
+var schemas=require('./lib/schema');
+var restformulator=require('./lib/restexplorer');
+var errorbuilder=require('./lib/errorhandler');
+var DataRaptor={
+	"Extract":{},
+	"Load":{},
+	"Transform":{},
+	"Load (JSON)":{},"Extract (JSON)":{},
+};
+var test=[];
+var temp=name="";
+
+var objectcaller=function(){
+	console.log('object caller');
+	for (key in DataRaptor["Extract"]){
+			restformulator.extract(DataRaptor["Extract"][key][1],DataRaptor["Extract"][key][2]);
+	}
+	for (key in DataRaptor["Extract (JSON)"]){
+			restformulator.extract(DataRaptor["Extract (JSON)"][key][1],DataRaptor["Extract (JSON)"][key][2]);
+	}
+}
+
+var schemachecker = function (file,fpath,tbc,schema){
+			var validate = ajv.compile(schemas[schema]); 
+			var valid = validate(tbc); 
+
+			if (!valid) {
+			console.log('valid',validate.errors);
+			validate.errors[0]['Name']=file;
+			validate.errors[0]['fpath']=fpath;
+			var datapath=validate.errors[0]['dataPath'];
+			//console.log(datapath.substring(datapath.indexOf("__")+2,datapath.lastIndexOf("__")));
+			validate.errors[0]['tooltip']=validate.errors[0]['keyword']=="pattern"?'Name':datapath.substring(datapath.indexOf("__")+2,datapath.lastIndexOf("__"));
+			console.log('JSON File '+file +' is not Fine');
+			errorbuilder.addcontent(validate.errors);
+			}
+			else{
+			console.log('JSON File '+file +' is Fine');
+		/* 	if(String(file).match(/DataPack.json/i)){
+						tbc["%vlocity_namespace%__Type__c"]== "Extract"
+					}
+					if(String(file).match(/Mappings.json/i)){
+						restformulator.extract(tbc);
+					} */
+			}
+	
+}
+
+
+var walkSync = function(dir, filelist) {
+	try{
+			  var fs = fs || require('fs'),
+				  files = fs.readdirSync(dir);
+			  filelist = filelist || [];
+			  files.forEach(function(file) {
+				if (fs.statSync(dir + file).isDirectory()) {
+
+				  filelist = walkSync(dir + file + '/', filelist);
+				  console.log(["Extract","Load","Load (JSON)","Extract (JSON)"].indexOf(temp));
+				  if (temp!="" && name!="" && test.length>0 ){
+					  //console.log(test);
+				  DataRaptor[temp][name]=test;
+				  test=[];
+				  }
+				}
+				else {
+					var fpath=path.resolve(dir,file);
+					var reqfile=require(fpath);
+					//console.log(path.resolve(dir,file));
+					//if(){
+					if(String(file).match(/DataPack.json/i) && reqfile["VlocityRecordSObjectType"]=="%vlocity_namespace%__DRBundle__c"){
+								temp=reqfile["%vlocity_namespace%__Type__c"];
+								name=reqfile["Name"];
+								console.log(temp,name);
+								if (DataRaptor.hasOwnProperty(temp))
+									DataRaptor[temp][name]=[];
+								
+						}
+					console.log(String(file));
+					test.push(reqfile);
+					String(file).match(/DataPack.json/i) ? schemachecker(file,fpath,reqfile,'DataRaptorDatapack') : false;
+					String(file).match(/Mappings.json/i) ? schemachecker(file,fpath,reqfile,'DataRaptorMappings') : false;
+				  filelist.push(file);
+					//}
+				}
+			});
+
+}
+  catch(e){
+		var f=[{}];
+	var t=e.message.split(': ');
+	f[0]["fpath"]=t[0];
+	f[0]["message"]=t[1];
+	f[0]["errorcode"]="Syntax Error!!";
+	errorbuilder.addcontent(f);
+	console.log('dasssda',e.message);
+	}
+	finally{
+		return filelist;
+	}
+  
+};
+try{
+console.log(walkSync(path.join(__dirname, 'example_vlocity_build/example_vlocity_build/DataRaptor/')).length);
+console.log(DataRaptor);
+objectcaller();
+}
+catch(e){
+	var f=[{}];
+	var t=e.message.split(': ');
+	f[0]["fpath"]=t[0];
+	f[0]["message"]=t[1];
+	f[0]["errorcode"]="Syntax Error!!";
+	errorbuilder.addcontent(f);
+	console.log('dasda',e.message);
+	
+}
+finally{
+errorbuilder.savehtml();
+}
