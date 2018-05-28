@@ -1,0 +1,3597 @@
+var nameregex="^([A-Z]{1}[A-Za-z_0-9]*)+$";
+
+var DataRaptorDatapack={
+  "$id": "Dataraptorloader",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__BatchSize__c": {
+      "$id": "/properties/%vlocity_namespace%__BatchSize__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__batchsize__c Schema ",
+      "default": 200,
+      "examples": [
+        200
+      ]
+    },
+    "%vlocity_namespace%__CheckFieldLevelSecurity__c": {
+      "$id": "/properties/%vlocity_namespace%__CheckFieldLevelSecurity__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__checkfieldlevelsecurity__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__DRMapItem__c": {
+      "$id": "/properties/%vlocity_namespace%__DRMapItem__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__drmapitem__c Schema ",
+      "default": "",
+      "examples": [
+        "cryptoextract_Mappings.json"
+      ]
+    },
+    "%vlocity_namespace%__DRMapName__c": {
+      "$id": "/properties/%vlocity_namespace%__DRMapName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__drmapname__c Schema ",
+      "default": "",
+      "examples": [
+        "cryptoextract"
+      ]
+    },
+    "%vlocity_namespace%__DeleteOnSuccess__c": {
+      "$id": "/properties/%vlocity_namespace%__DeleteOnSuccess__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__deleteonsuccess__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Description__c": {
+      "$id": "/properties/%vlocity_namespace%__Description__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__description__c Schema ",
+      "default": "",
+	  "minLength":1,
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__GlobalKey__c": {
+      "$id": "/properties/%vlocity_namespace%__GlobalKey__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__globalkey__c Schema ",
+      "default": "",
+      "examples": [
+        "190f65c7-8143-02d0-30a9-1f7e3d6f5299"
+      ]
+    },
+    "%vlocity_namespace%__IgnoreErrors__c": {
+      "$id": "/properties/%vlocity_namespace%__IgnoreErrors__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__ignoreerrors__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__InputJson__c": {
+      "$id": "/properties/%vlocity_namespace%__InputJson__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__inputjson__c Schema ",
+      "examples": [
+        "test.json"
+      ]
+    },
+    "%vlocity_namespace%__InputType__c": {
+      "$id": "/properties/%vlocity_namespace%__InputType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__inputtype__c Schema ",
+      "default": "",
+      "examples": [
+        "JSON"
+      ]
+    },
+    "%vlocity_namespace%__InputXml__c": {
+      "$id": "/properties/%vlocity_namespace%__InputXml__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__inputxml__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__InterfaceObject__c": {
+      "$id": "/properties/%vlocity_namespace%__InterfaceObject__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__interfaceobject__c Schema ",
+      "default": "",
+      "examples": [
+        "json"
+      ]
+    },
+    "%vlocity_namespace%__IsDefaultForInterface__c": {
+      "$id": "/properties/%vlocity_namespace%__IsDefaultForInterface__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__isdefaultforinterface__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__IsProcessSuperBulk__c": {
+      "$id": "/properties/%vlocity_namespace%__IsProcessSuperBulk__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__isprocesssuperbulk__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__OuboundStagingObjectDataField__c": {
+      "$id": "/properties/%vlocity_namespace%__OuboundStagingObjectDataField__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__ouboundstagingobjectdatafield__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__OutboundConfigurationField__c": {
+      "$id": "/properties/%vlocity_namespace%__OutboundConfigurationField__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__outboundconfigurationfield__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__OutboundConfigurationName__c": {
+      "$id": "/properties/%vlocity_namespace%__OutboundConfigurationName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__outboundconfigurationname__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__OutboundStagingObjectName__c": {
+      "$id": "/properties/%vlocity_namespace%__OutboundStagingObjectName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__outboundstagingobjectname__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__OutputType__c": {
+      "$id": "/properties/%vlocity_namespace%__OutputType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__outputtype__c Schema ",
+      "default": "",
+      "examples": [
+        "JSON"
+      ]
+    },
+    "%vlocity_namespace%__OverwriteAllNullValues__c": {
+      "$id": "/properties/%vlocity_namespace%__OverwriteAllNullValues__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__overwriteallnullvalues__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__PreprocessorClassName__c": {
+      "$id": "/properties/%vlocity_namespace%__PreprocessorClassName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__preprocessorclassname__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__ProcessNowThreshold__c": {
+      "$id": "/properties/%vlocity_namespace%__ProcessNowThreshold__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__processnowthreshold__c Schema ",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    },
+    "%vlocity_namespace%__RollbackOnError__c": {
+      "$id": "/properties/%vlocity_namespace%__RollbackOnError__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__rollbackonerror__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__SampleInputJSON__c": {
+      "$id": "/properties/%vlocity_namespace%__SampleInputJSON__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__sampleinputjson__c Schema ",
+      "default": "",
+      "examples": [
+        "cryptoextract_SampleInputJson.json"
+      ]
+    },
+    "%vlocity_namespace%__SampleInputRows__c": {
+      "$id": "/properties/%vlocity_namespace%__SampleInputRows__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__sampleinputrows__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__SampleInputXML__c": {
+      "$id": "/properties/%vlocity_namespace%__SampleInputXML__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__sampleinputxml__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__TargetOutDocuSignTemplateId__c": {
+      "$id": "/properties/%vlocity_namespace%__TargetOutDocuSignTemplateId__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__targetoutdocusigntemplateid__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__TargetOutJson__c": {
+      "$id": "/properties/%vlocity_namespace%__TargetOutJson__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__targetoutjson__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__TargetOutPdfDocName__c": {
+      "$id": "/properties/%vlocity_namespace%__TargetOutPdfDocName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__targetoutpdfdocname__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__TargetOutXml__c": {
+      "$id": "/properties/%vlocity_namespace%__TargetOutXml__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__targetoutxml__c Schema ",
+      "default": "",
+      "examples": [
+        ""
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Extract"
+      ]
+    },
+    "%vlocity_namespace%__UseAssignmentRules__c": {
+      "$id": "/properties/%vlocity_namespace%__UseAssignmentRules__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__useassignmentrules__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "cryptoextract"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__DRBundle__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__DRBundle__c/cryptoextract"
+      ]
+    }
+  },
+  "if": {
+    "properties": {
+      "%vlocity_namespace%__Type__c": { "enum": ["Load","Transform"] }
+    }
+  },
+  "then": { 
+	"properties": {
+		"%vlocity_namespace%__InputJson__c" :{"type":"string","minLength":1} 
+		}
+  },
+
+  }
+
+var DataRaptorMappings= {
+  "$id": "DataRaptorMappings",
+  "type": "array",
+  "definitions": {},
+  "items": {
+    "$id": "DataRaptorMappings/items",
+    "type": "object",
+    "properties": {
+      "%vlocity_namespace%__DomainObjectAPIName__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__DomainObjectAPIName__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__domainobjectapiname__c Schema ",
+        "default": "",
+        "examples": [
+          "json"
+        ]
+      },
+      "%vlocity_namespace%__DomainObjectCreationOrder__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__DomainObjectCreationOrder__c",
+        "type": "integer",
+        "title": "The %vlocity_namespace%__domainobjectcreationorder__c Schema ",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "%vlocity_namespace%__DomainObjectFieldAPIName__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__DomainObjectFieldAPIName__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__domainobjectfieldapiname__c Schema ",
+        "default": "",
+        "examples": [
+          "Crypto"
+        ]
+      },
+      "%vlocity_namespace%__FilterOperator__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__FilterOperator__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__filteroperator__c Schema ",
+        "default": "",
+        "examples": [
+          "="
+        ]
+      },
+      "%vlocity_namespace%__FilterValue__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__FilterValue__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__filtervalue__c Schema ",
+        "default": "",
+        "examples": [
+          "Id"
+        ]
+      },
+      "%vlocity_namespace%__FormulaOrder__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__FormulaOrder__c",
+        "type": "integer",
+        "title": "The %vlocity_namespace%__formulaorder__c Schema ",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "%vlocity_namespace%__GlobalKey__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__GlobalKey__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__globalkey__c Schema ",
+        "default": "",
+        "examples": [
+          "998910c0-bcef-12b8-582e-6b520a37ad75"
+        ]
+      },
+      "%vlocity_namespace%__InterfaceFieldAPIName__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__InterfaceFieldAPIName__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__interfacefieldapiname__c Schema ",
+        "default": "",
+        "examples": [
+          "Account__c"
+        ]
+      },
+      "%vlocity_namespace%__InterfaceObjectLookupOrder__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__InterfaceObjectLookupOrder__c",
+        "type": "integer",
+        "title": "The %vlocity_namespace%__interfaceobjectlookuporder__c Schema ",
+        "default": 0,
+        "examples": [
+          1
+        ]
+      },
+      "%vlocity_namespace%__InterfaceObjectName__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__InterfaceObjectName__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__interfaceobjectname__c Schema ",
+        "default": "",
+        "examples": [
+          "Cryptocurrency__c"
+        ]
+      },
+      "%vlocity_namespace%__IsDisabled__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__IsDisabled__c",
+        "type": "boolean",
+        "title": "The %vlocity_namespace%__isdisabled__c Schema ",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "%vlocity_namespace%__IsRequiredForUpsert__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__IsRequiredForUpsert__c",
+        "type": "boolean",
+        "title": "The %vlocity_namespace%__isrequiredforupsert__c Schema ",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "%vlocity_namespace%__LinkCreatedIndex__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__LinkCreatedIndex__c",
+        "type": "integer",
+        "title": "The %vlocity_namespace%__linkcreatedindex__c Schema ",
+        "default": 0,
+        "examples": [
+          0
+        ]
+      },
+      "%vlocity_namespace%__MapId__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__MapId__c",
+        "type": "string",
+        "title": "The %vlocity_namespace%__mapid__c Schema ",
+        "default": "",
+        "examples": [
+          "cryptoextractCustom2080"
+        ]
+      },
+      "%vlocity_namespace%__UpsertKey__c": {
+        "$id": "DataRaptorMappings/items/properties/%vlocity_namespace%__UpsertKey__c",
+        "type": "boolean",
+        "title": "The %vlocity_namespace%__upsertkey__c Schema ",
+        "default": false,
+        "examples": [
+          false
+        ]
+      },
+      "Name": {
+        "$id": "DataRaptorMappings/items/properties/Name",
+        "type": "string",
+        "title": "The Name Schema ",
+        "default": "",
+		"pattern": nameregex,
+        "examples": [
+          "cryptoextract"
+        ]
+      },
+      "VlocityDataPackType": {
+        "$id": "DataRaptorMappings/items/properties/VlocityDataPackType",
+        "type": "string",
+        "title": "The Vlocitydatapacktype Schema ",
+        "default": "",
+        "examples": [
+          "SObject"
+        ]
+      },
+      "VlocityRecordSObjectType": {
+        "$id": "DataRaptorMappings/items/properties/VlocityRecordSObjectType",
+        "type": "string",
+        "title": "The Vlocityrecordsobjecttype Schema ",
+        "default": "",
+        "examples": [
+          "%vlocity_namespace%__DRMapItem__c"
+        ]
+      }
+    }
+  }
+}
+
+var OmniscriptBlock={
+  "$id": "OmscriptBlock",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        3
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "StepCallerSnapshot"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepCallerSnapshot"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "StepCallerSnapshot"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "accessibleInFutureSteps": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/accessibleInFutureSteps",
+          "type": "boolean",
+          "title": "The Accessibleinfuturesteps Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "collapse": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/collapse",
+          "type": "boolean",
+          "title": "The Collapse Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "conditionType": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/conditionType",
+          "type": "string",
+          "title": "The Conditiontype Schema ",
+          "default": "",
+          "examples": [
+            "Hide if False"
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            12
+          ]
+        },
+        "hide": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/hide",
+          "type": "boolean",
+          "title": "The Hide Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Caller Contact Information"
+          ]
+        },
+        "repeat": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/repeat",
+          "type": "boolean",
+          "title": "The Repeat Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "repeatClone": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/repeatClone",
+          "type": "boolean",
+          "title": "The Repeatclone Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Block"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "BlockCallerContactInfo"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/BlockCallerContactInfo"
+      ]
+    }
+  }
+}
+
+var OmniscriptStep={
+  "$id": "OmscriptStep",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        null
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "cancelLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/cancelLabel",
+          "type": "string",
+          "title": "The Cancellabel Schema ",
+          "default": "",
+          "examples": [
+            "Cancel"
+          ]
+        },
+        "cancelMessage": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/cancelMessage",
+          "type": "string",
+          "title": "The Cancelmessage Schema ",
+          "default": "",
+          "examples": [
+            "Are you sure?"
+          ]
+        },
+        "completeLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/completeLabel",
+          "type": "string",
+          "title": "The Completelabel Schema ",
+          "default": "",
+          "examples": [
+            "Complete"
+          ]
+        },
+        "completeMessage": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/completeMessage",
+          "type": "string",
+          "title": "The Completemessage Schema ",
+          "default": "",
+          "examples": [
+            "Are you sure you want to complete the script?"
+          ]
+        },
+        "conditionType": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/conditionType",
+          "type": "string",
+          "title": "The Conditiontype Schema ",
+          "default": "",
+          "examples": [
+            "Hide if False"
+          ]
+        },
+        "instruction": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/instruction",
+          "type": "string",
+          "title": "The Instruction Schema ",
+          "default": "",
+          "examples": [
+            "<p>Update all data so that PDF will populate properly</p>"
+          ]
+        },
+        "knowledgeOptions": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/knowledgeOptions",
+          "type": "object",
+          "properties": {
+            "dataCategoryCriteria": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/knowledgeOptions/properties/dataCategoryCriteria",
+              "type": "string",
+              "title": "The Datacategorycriteria Schema ",
+              "default": "",
+              "examples": [
+                ""
+              ]
+            },
+            "keyword": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/knowledgeOptions/properties/keyword",
+              "type": "string",
+              "title": "The Keyword Schema ",
+              "default": "",
+              "examples": [
+                ""
+              ]
+            },
+            "language": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/knowledgeOptions/properties/language",
+              "type": "string",
+              "title": "The Language Schema ",
+              "default": "",
+              "examples": [
+                "English"
+              ]
+            },
+            "publishStatus": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/knowledgeOptions/properties/publishStatus",
+              "type": "string",
+              "title": "The Publishstatus Schema ",
+              "default": "",
+              "examples": [
+                "Online"
+              ]
+            },
+            "remoteTimeout": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/knowledgeOptions/properties/remoteTimeout",
+              "type": "integer",
+              "title": "The Remotetimeout Schema ",
+              "default": 0,
+              "examples": [
+                30000
+              ]
+            }
+          }
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Caller Snapshot and Contact Update"
+          ]
+        },
+        "nextLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/nextLabel",
+          "type": "string",
+          "title": "The Nextlabel Schema ",
+          "default": "",
+          "examples": [
+            "Next"
+          ]
+        },
+        "nextWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/nextWidth",
+          "type": "integer",
+          "title": "The Nextwidth Schema ",
+          "default": 0,
+          "examples": [
+            3
+          ]
+        },
+        "previousLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/previousLabel",
+          "type": "string",
+          "title": "The Previouslabel Schema ",
+          "default": "",
+          "examples": [
+            "Previous"
+          ]
+        },
+        "previousWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/previousWidth",
+          "type": "integer",
+          "title": "The Previouswidth Schema ",
+          "default": 0,
+          "examples": [
+            3
+          ]
+        },
+        "remoteClass": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/remoteClass",
+          "type": "string",
+          "title": "The Remoteclass Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "remoteMethod": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/remoteMethod",
+          "type": "string",
+          "title": "The Remotemethod Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "remoteOptions": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/remoteOptions",
+          "type": "object"
+        },
+        "remoteTimeout": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/remoteTimeout",
+          "type": "integer",
+          "title": "The Remotetimeout Schema ",
+          "default": 0,
+          "examples": [
+            30000
+          ]
+        },
+        "saveLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/saveLabel",
+          "type": "string",
+          "title": "The Savelabel Schema ",
+          "default": "",
+          "examples": [
+            "Save for later"
+          ]
+        },
+        "saveMessage": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/saveMessage",
+          "type": "string",
+          "title": "The Savemessage Schema ",
+          "default": "",
+          "examples": [
+            "Are you sure you want to save it for later?"
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "object",
+          "properties": {
+            "group": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group",
+              "type": "object",
+              "properties": {
+                "operator": {
+                  "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/operator",
+                  "type": "string",
+                  "title": "The Operator Schema ",
+                  "default": "",
+                  "examples": [
+                    "AND"
+                  ]
+                },
+                "rules": {
+                  "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules",
+                  "type": "array",
+                  "items": {
+                    "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items",
+                    "type": "object",
+                    "properties": {
+                      "condition": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items/properties/condition",
+                        "type": "string",
+                        "title": "The Condition Schema ",
+                        "default": "",
+                        "examples": [
+                          "<>"
+                        ]
+                      },
+                      "data": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items/properties/data",
+                        "type": "null",
+                        "title": "The Data Schema ",
+                        "default": null,
+                        "examples": [
+                          null
+                        ]
+                      },
+                      "field": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items/properties/field",
+                        "type": "string",
+                        "title": "The Field Schema ",
+                        "default": "",
+                        "examples": [
+                          "OwnerEmail"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "showPersistentComponent": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/showPersistentComponent",
+          "type": "array",
+          "items": {
+            "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/showPersistentComponent/items",
+            "type": "boolean",
+            "title": "The 0th Schema ",
+            "default": false,
+            "examples": [
+              false,
+              false
+            ]
+          }
+        },
+        "validationRequired": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validationRequired",
+          "type": "boolean",
+          "title": "The Validationrequired Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "StepCallerSnapshot"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepCallerSnapshot"
+      ]
+    }
+  }
+}
+
+var OmniscriptTextBlock={
+  "$id": "OmscriptTextBlock",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        7
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+		  "pattern": nameregex,
+          "title": "The Name Schema ",
+          "default": "",
+          "examples": [
+            "StepSendPDFAuthUserForm"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepSendPDFAuthUserForm"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "StepSendPDFAuthUserForm"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            ""
+          ]
+        },
+        "dataJSON": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/dataJSON",
+          "type": "boolean",
+          "title": "The Datajson Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Text Block Email Sent Confirmation"
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "object",
+          "properties": {
+            "group": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group",
+              "type": "object",
+              "properties": {
+                "operator": {
+                  "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/operator",
+                  "type": "string",
+                  "title": "The Operator Schema ",
+                  "default": "",
+                  "examples": [
+                    "AND"
+                  ]
+                },
+                "rules": {
+                  "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules",
+                  "type": "array",
+                  "items": {
+                    "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items",
+                    "type": "object",
+                    "properties": {
+                      "condition": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items/properties/condition",
+                        "type": "string",
+                        "title": "The Condition Schema ",
+                        "default": "",
+                        "examples": [
+                          "="
+                        ]
+                      },
+                      "data": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items/properties/data",
+                        "type": "string",
+                        "title": "The Data Schema ",
+                        "default": "",
+                        "examples": [
+                          "true"
+                        ]
+                      },
+                      "field": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show/properties/group/properties/rules/items/properties/field",
+                        "type": "string",
+                        "title": "The Field Schema ",
+                        "default": "",
+                        "examples": [
+                          "SendAuthEmail:Success"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "text": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/text",
+          "type": "string",
+          "title": "The Text Schema ",
+          "default": "",
+          "examples": [
+            "<p><span style=\"color: #00ff00;\">Email Sent!</span></p>"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Text Block"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "TxtBlkEmailConfirm"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/TxtBlkEmailConfirm"
+      ]
+    }
+  }
+}
+
+var OmniscriptInputText={
+  "$id": "OmscriptInputtext",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        2
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "BlockCallerVerificationInfo"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/BlockCallerVerificationInfo"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "BlockCallerVerificationInfo"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Block"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "accessibleInFutureSteps": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/accessibleInFutureSteps",
+          "type": "boolean",
+          "title": "The Accessibleinfuturesteps Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "conditionType": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/conditionType",
+          "type": "string",
+          "title": "The Conditiontype Schema ",
+          "default": "",
+          "examples": [
+            "Hide if False"
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            "Hide if False"
+          ]
+        },
+        "debounceValue": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/debounceValue",
+          "type": "integer",
+          "title": "The Debouncevalue Schema ",
+          "default": 0,
+          "examples": [
+            0
+          ]
+        },
+        "help": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/help",
+          "type": "boolean",
+          "title": "The Help Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "helpText": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/helpText",
+          "type": "string",
+          "title": "The Helptext Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "hide": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/hide",
+          "type": "boolean",
+          "title": "The Hide Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Caller Name"
+          ]
+        },
+        "mask": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/mask",
+          "type": "string",
+          "title": "The Mask Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "maxLength": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/maxLength",
+          "type": "integer",
+          "title": "The Maxlength Schema ",
+          "default": 0,
+          "examples": [
+            255
+          ]
+        },
+        "minLength": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/minLength",
+          "type": "integer",
+          "title": "The Minlength Schema ",
+          "default": 0,
+          "examples": [
+            0
+          ]
+        },
+        "pattern": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/pattern",
+          "type": "string",
+          "title": "The Pattern Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "ptrnErrText": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/ptrnErrText",
+          "type": "string",
+          "title": "The Ptrnerrtext Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "readOnly": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/readOnly",
+          "type": "boolean",
+          "title": "The Readonly Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "repeat": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/repeat",
+          "type": "boolean",
+          "title": "The Repeat Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "repeatClone": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/repeatClone",
+          "type": "boolean",
+          "title": "The Repeatclone Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "required": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/required",
+          "type": "boolean",
+          "title": "The Required Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Text"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "CallerName"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/CallerName"
+      ]
+    }
+  }
+}
+
+var OmniscriptLineBreak={
+  "$id": "OmscriptLineBreak",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        null
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "StepSendPDFAuthUserForm"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepSendPDFAuthUserForm"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "StepSendPDFAuthUserForm"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Line Break 1"
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Line Break"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "Line Break 2"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/Line Break 2"
+      ]
+    }
+  }
+}
+
+var OmniscriptValidation={
+  "$id": "OmscriptValidation",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        2
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "StepConfirmDelete"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepConfirmDelete"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "StepConfirmDelete"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            ""
+          ]
+        },
+        "hideLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/hideLabel",
+          "type": "boolean",
+          "title": "The Hidelabel Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Message PDF Deleted"
+          ]
+        },
+        "messages": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/messages",
+          "type": "array",
+          "items": {
+            "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/messages/items",
+            "type": "object",
+            "properties": {
+              "active": {
+                "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/messages/items/properties/active",
+                "type": "boolean",
+                "title": "The Active Schema ",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              },
+              "text": {
+                "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/messages/items/properties/text",
+                "type": "string",
+                "title": "The Text Schema ",
+                "default": "",
+                "examples": [
+                  "Thank you! Customer Privacy is important at Road Runner."
+                ]
+              },
+              "type": {
+                "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/messages/items/properties/type",
+                "type": "string",
+                "title": "The Type Schema ",
+                "default": "",
+                "examples": [
+                  "Success"
+                ]
+              },
+              "value": {
+                "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/messages/items/properties/value",
+                "type": "boolean",
+                "title": "The Value Schema ",
+                "default": false,
+                "examples": [
+                  true
+                ]
+              }
+            }
+          }
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "validateExpression": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression",
+          "type": "object",
+          "properties": {
+            "group": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group",
+              "type": "object",
+              "properties": {
+                "operator": {
+                  "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group/properties/operator",
+                  "type": "string",
+                  "title": "The Operator Schema ",
+                  "default": "",
+                  "examples": [
+                    "AND"
+                  ]
+                },
+                "rules": {
+                  "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group/properties/rules",
+                  "type": "array",
+                  "items": {
+                    "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group/properties/rules/items",
+                    "type": "object",
+                    "properties": {
+                      "condition": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group/properties/rules/items/properties/condition",
+                        "type": "string",
+                        "title": "The Condition Schema ",
+                        "default": "",
+                        "examples": [
+                          "="
+                        ]
+                      },
+                      "data": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group/properties/rules/items/properties/data",
+                        "type": "string",
+                        "title": "The Data Schema ",
+                        "default": "",
+                        "examples": [
+                          "true"
+                        ]
+                      },
+                      "field": {
+                        "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validateExpression/properties/group/properties/rules/items/properties/field",
+                        "type": "string",
+                        "title": "The Field Schema ",
+                        "default": "",
+                        "examples": [
+                          "ChkBxPDFDelete"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Validation"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "MsgPDFDelete"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/MsgPDFDelete"
+      ]
+    }
+  }
+}
+
+var OmniscriptInputCheckbox={
+  "$id": "OmscriptInputCheckbox",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "StepConfirmDelete"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepConfirmDelete"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "StepConfirmDelete"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "accessibleInFutureSteps": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/accessibleInFutureSteps",
+          "type": "boolean",
+          "title": "The Accessibleinfuturesteps Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "checkLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/checkLabel",
+          "type": "string",
+          "title": "The Checklabel Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "conditionType": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/conditionType",
+          "type": "string",
+          "title": "The Conditiontype Schema ",
+          "default": "",
+          "examples": [
+            "Hide if False"
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        },
+        "help": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/help",
+          "type": "boolean",
+          "title": "The Help Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "helpText": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/helpText",
+          "type": "string",
+          "title": "The Helptext Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "hide": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/hide",
+          "type": "boolean",
+          "title": "The Hide Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "null",
+          "title": "The Label Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "readOnly": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/readOnly",
+          "type": "boolean",
+          "title": "The Readonly Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "repeat": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/repeat",
+          "type": "boolean",
+          "title": "The Repeat Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "repeatClone": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/repeatClone",
+          "type": "boolean",
+          "title": "The Repeatclone Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "required": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/required",
+          "type": "boolean",
+          "title": "The Required Schema ",
+          "default": false,
+          "examples": [
+            true
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "Checkbox"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "ChkBxPDFDelete"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/ChkBxPDFDelete"
+      ]
+    }
+  }
+}
+
+var OmniscriptPDFAction={
+  "$id": "OmscriptPDFAction",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__ParentElementId__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementId__c",
+      "type": "object",
+      "properties": {
+        "%vlocity_namespace%__OmniScriptId__c": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/%vlocity_namespace%__OmniScriptId__c",
+          "type": "string",
+          "title": "The %vlocity_namespace%__omniscriptid__c Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+		  "pattern": nameregex,
+          "default": "",
+          "examples": [
+            "StepSendPDFAuthUserForm"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/StepSendPDFAuthUserForm"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__ParentElementId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__Element__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ParentElementName__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementName__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementname__c Schema ",
+      "default": "",
+      "examples": [
+        "StepSendPDFAuthUserForm"
+      ]
+    },
+    "%vlocity_namespace%__ParentElementType__c": {
+      "$id": "/properties/%vlocity_namespace%__ParentElementType__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__parentelementtype__c Schema ",
+      "default": "",
+      "examples": [
+        "Step"
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            ""
+          ]
+        },
+        "dateFormat": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/dateFormat",
+          "type": "string",
+          "title": "The Dateformat Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "dateTimeFormat": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/dateTimeFormat",
+          "type": "string",
+          "title": "The Datetimeformat Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "displayHeight": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/displayHeight",
+          "type": "integer",
+          "title": "The Displayheight Schema ",
+          "default": 0,
+          "examples": [
+            700
+          ]
+        },
+        "displayWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/displayWidth",
+          "type": "integer",
+          "title": "The Displaywidth Schema ",
+          "default": 0,
+          "examples": [
+            600
+          ]
+        },
+        "failureAbortLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/failureAbortLabel",
+          "type": "string",
+          "title": "The Failureabortlabel Schema ",
+          "default": "",
+          "examples": [
+            "Abort"
+          ]
+        },
+        "failureAbortMessage": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/failureAbortMessage",
+          "type": "string",
+          "title": "The Failureabortmessage Schema ",
+          "default": "",
+          "examples": [
+            "Are you sure?"
+          ]
+        },
+        "failureNextLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/failureNextLabel",
+          "type": "string",
+          "title": "The Failurenextlabel Schema ",
+          "default": "",
+          "examples": [
+            "Continue"
+          ]
+        },
+        "inProgressMessage": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/inProgressMessage",
+          "type": "string",
+          "title": "The Inprogressmessage Schema ",
+          "default": "",
+          "examples": [
+            "In Progress"
+          ]
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Get Account Authorization PDF"
+          ]
+        },
+        "message": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/message",
+          "type": "object"
+        },
+        "postMessage": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/postMessage",
+          "type": "string",
+          "title": "The Postmessage Schema ",
+          "default": "",
+          "examples": [
+            "Done"
+          ]
+        },
+        "preTransformBundle": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/preTransformBundle",
+          "type": "string",
+          "title": "The Pretransformbundle Schema ",
+          "default": "",
+          "examples": [
+            "TRNGNewAuthUserPDFTransform"
+          ]
+        },
+        "redirectNextLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/redirectNextLabel",
+          "type": "string",
+          "title": "The Redirectnextlabel Schema ",
+          "default": "",
+          "examples": [
+            "Next"
+          ]
+        },
+        "redirectNextWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/redirectNextWidth",
+          "type": "integer",
+          "title": "The Redirectnextwidth Schema ",
+          "default": 0,
+          "examples": [
+            3
+          ]
+        },
+        "redirectPageName": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/redirectPageName",
+          "type": "string",
+          "title": "The Redirectpagename Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "redirectPreviousLabel": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/redirectPreviousLabel",
+          "type": "string",
+          "title": "The Redirectpreviouslabel Schema ",
+          "default": "",
+          "examples": [
+            "Previous"
+          ]
+        },
+        "redirectPreviousWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/redirectPreviousWidth",
+          "type": "integer",
+          "title": "The Redirectpreviouswidth Schema ",
+          "default": 0,
+          "examples": [
+            3
+          ]
+        },
+        "redirectTemplateUrl": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/redirectTemplateUrl",
+          "type": "string",
+          "title": "The Redirecttemplateurl Schema ",
+          "default": "",
+          "examples": [
+            "vlcPDF.html"
+          ]
+        },
+        "remoteTimeout": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/remoteTimeout",
+          "type": "integer",
+          "title": "The Remotetimeout Schema ",
+          "default": 0,
+          "examples": [
+            30000
+          ]
+        },
+        "sendJSONNode": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/sendJSONNode",
+          "type": "string",
+          "title": "The Sendjsonnode Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "sendJSONPath": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/sendJSONPath",
+          "type": "string",
+          "title": "The Sendjsonpath Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "showPersistentComponent": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/showPersistentComponent",
+          "type": "array",
+          "items": {
+            "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/showPersistentComponent/items",
+            "type": "boolean",
+            "title": "The 0th Schema ",
+            "default": false,
+            "examples": [
+              false,
+              false
+            ]
+          }
+        },
+        "ssm": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/ssm",
+          "type": "boolean",
+          "title": "The Ssm Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "templateName": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/templateName",
+          "type": "string",
+          "title": "The Templatename Schema ",
+          "default": "",
+          "examples": [
+            "New_Auth_User_Form"
+          ]
+        },
+        "timeFormat": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/timeFormat",
+          "type": "string",
+          "title": "The Timeformat Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "validationRequired": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validationRequired",
+          "type": "string",
+          "title": "The Validationrequired Schema ",
+          "default": "",
+          "examples": [
+            "Submit"
+          ]
+        },
+        "wpm": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/wpm",
+          "type": "boolean",
+          "title": "The Wpm Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "PDF Action"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "PopulatePDFAuth"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/PopulatePDFAuth"
+      ]
+    }
+  }
+}
+
+var OmniscriptSetValues={
+  "$id": "OmscriptSetValues",
+  "type": "object",
+  "definitions": {},
+  "properties": {
+    "%vlocity_namespace%__Active__c": {
+      "$id": "/properties/%vlocity_namespace%__Active__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__active__c Schema ",
+      "default": false,
+      "examples": [
+        true
+      ]
+    },
+    "%vlocity_namespace%__Level__c": {
+      "$id": "/properties/%vlocity_namespace%__Level__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__level__c Schema ",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    },
+    "%vlocity_namespace%__OmniScriptId__c": {
+      "$id": "/properties/%vlocity_namespace%__OmniScriptId__c",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/Name",
+          "type": "string",
+          "title": "The Name Schema ",
+          "default": "",
+		  "pattern": nameregex,
+          "examples": [
+            "TRNGAddAuthUser"
+          ]
+        },
+        "VlocityDataPackType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityDataPackType",
+          "type": "string",
+          "title": "The Vlocitydatapacktype Schema ",
+          "default": "",
+          "examples": [
+            "VlocityMatchingKeyObject"
+          ]
+        },
+        "VlocityMatchingRecordSourceKey": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityMatchingRecordSourceKey",
+          "type": "string",
+          "title": "The Vlocitymatchingrecordsourcekey Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English"
+          ]
+        },
+        "VlocityRecordSObjectType": {
+          "$id": "/properties/%vlocity_namespace%__OmniScriptId__c/properties/VlocityRecordSObjectType",
+          "type": "string",
+          "title": "The Vlocityrecordsobjecttype Schema ",
+          "default": "",
+          "examples": [
+            "%vlocity_namespace%__OmniScript__c"
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__Order__c": {
+      "$id": "/properties/%vlocity_namespace%__Order__c",
+      "type": "integer",
+      "title": "The %vlocity_namespace%__order__c Schema ",
+      "default": 0,
+      "examples": [
+        1
+      ]
+    },
+    "%vlocity_namespace%__PropertySet__c": {
+      "$id": "/properties/%vlocity_namespace%__PropertySet__c",
+      "type": "object",
+      "properties": {
+        "HTMLTemplateId": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/HTMLTemplateId",
+          "type": "string",
+          "title": "The Htmltemplateid Schema ",
+          "default": "",
+          "examples": [
+            ""
+          ]
+        },
+        "controlWidth": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/controlWidth",
+          "type": "integer",
+          "title": "The Controlwidth Schema ",
+          "default": 0,
+          "examples": [
+            12
+          ]
+        },
+        "elementValueMap": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/elementValueMap",
+          "type": "object",
+          "properties": {
+            "ContextId": {
+              "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/elementValueMap/properties/ContextId",
+              "type": "string",
+              "title": "The Contextid Schema ",
+              "default": "",
+              "examples": [
+                "0037F00000NRA3s"
+              ]
+            }
+          }
+        },
+        "label": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/label",
+          "type": "string",
+          "title": "The Label Schema ",
+          "default": "",
+          "examples": [
+            "Script Constants"
+          ]
+        },
+        "message": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/message",
+          "type": "object"
+        },
+        "show": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/show",
+          "type": "null",
+          "title": "The Show Schema ",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "showPersistentComponent": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/showPersistentComponent",
+          "type": "array",
+          "items": {
+            "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/showPersistentComponent/items",
+            "type": "boolean",
+            "title": "The 0th Schema ",
+            "default": false,
+            "examples": [
+              false,
+              false
+            ]
+          }
+        },
+        "ssm": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/ssm",
+          "type": "boolean",
+          "title": "The Ssm Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "validationRequired": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/validationRequired",
+          "type": "string",
+          "title": "The Validationrequired Schema ",
+          "default": "",
+          "examples": [
+            "None"
+          ]
+        },
+        "wpm": {
+          "$id": "/properties/%vlocity_namespace%__PropertySet__c/properties/wpm",
+          "type": "boolean",
+          "title": "The Wpm Schema ",
+          "default": false,
+          "examples": [
+            false
+          ]
+        }
+      }
+    },
+    "%vlocity_namespace%__ReusableOmniScript__c": {
+      "$id": "/properties/%vlocity_namespace%__ReusableOmniScript__c",
+      "type": "boolean",
+      "title": "The %vlocity_namespace%__reusableomniscript__c Schema ",
+      "default": false,
+      "examples": [
+        false
+      ]
+    },
+    "%vlocity_namespace%__Type__c": {
+      "$id": "/properties/%vlocity_namespace%__Type__c",
+      "type": "string",
+      "title": "The %vlocity_namespace%__type__c Schema ",
+      "default": "",
+      "examples": [
+        "Set Values"
+      ]
+    },
+    "Name": {
+      "$id": "/properties/Name",
+      "type": "string",
+      "title": "The Name Schema ",
+      "default": "",
+	  "pattern": nameregex,
+      "examples": [
+        "ScriptConstants"
+      ]
+    },
+    "VlocityDataPackType": {
+      "$id": "/properties/VlocityDataPackType",
+      "type": "string",
+      "title": "The Vlocitydatapacktype Schema ",
+      "default": "",
+      "examples": [
+        "SObject"
+      ]
+    },
+    "VlocityRecordSObjectType": {
+      "$id": "/properties/VlocityRecordSObjectType",
+      "type": "string",
+      "title": "The Vlocityrecordsobjecttype Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c"
+      ]
+    },
+    "VlocityRecordSourceKey": {
+      "$id": "/properties/VlocityRecordSourceKey",
+      "type": "string",
+      "title": "The Vlocityrecordsourcekey Schema ",
+      "default": "",
+      "examples": [
+        "%vlocity_namespace%__Element__c/%vlocity_namespace%__OmniScript__c/Account Management/Add Authorized User/English/ScriptConstants"
+      ]
+    }
+  }
+}
+
+
+module.exports.DataRaptorDatapack=DataRaptorDatapack;
+
+module.exports.DataRaptorMappings=DataRaptorMappings;
+module.exports.OmniscriptBlock=OmniscriptBlock;
+module.exports.OmniscriptStep=OmniscriptStep;
+module.exports.OmniscriptTextBlock=OmniscriptTextBlock;
+module.exports.OmniscriptInputText=OmniscriptInputText;
+module.exports.OmniscriptLineBreak=OmniscriptLineBreak;
+module.exports.OmniscriptValidation=OmniscriptValidation;
+module.exports.OmniscriptInputCheckbox=OmniscriptInputCheckbox;
+module.exports.OmniscriptPDFAction=OmniscriptPDFAction;
+module.exports.OmniscriptSetValues=OmniscriptSetValues;
