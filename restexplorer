@@ -1,0 +1,44 @@
+/* var https = require('https');
+var querystring = require('querystring');
+var fs = require('fs-extra');
+var properties = require('properties');
+var async = require('async');
+var access_token = '';
+var instance_url = ''; */
+
+
+
+var extract=function (tbc,val){
+	var filteroperator=[],interfacefieldname=[],interfaceobjectname=[];
+var query="",queryparams="";
+for (var key in tbc) {
+  if (tbc.hasOwnProperty(key)) {
+    //console.log(tbc[key]);
+		if(tbc[key].hasOwnProperty("%vlocity_namespace%__FilterOperator__c")){
+			console.log(tbc[key]["%vlocity_namespace%__FilterOperator__c"],tbc[key]["%vlocity_namespace%__InterfaceFieldAPIName__c"],tbc[key]["%vlocity_namespace%__InterfaceObjectName__c"]);
+		filteroperator.push(tbc[key]["%vlocity_namespace%__FilterOperator__c"]);
+		interfacefieldname.push(tbc[key]["%vlocity_namespace%__InterfaceFieldAPIName__c"]);
+		interfaceobjectname.push(tbc[key]["%vlocity_namespace%__InterfaceObjectName__c"]);
+		}
+		else{
+			//var temp=tbc[key]["%vlocity_namespace%__InterfaceFieldAPIName__c"];
+			//console.log(tbc,key);
+			if (queryparams!="")
+				queryparams+=','+tbc[key]["%vlocity_namespace%__InterfaceFieldAPIName__c"].split(':')[1];
+			else
+				queryparams+=tbc[key]["%vlocity_namespace%__InterfaceFieldAPIName__c"].split(':')[1];
+		}
+  }
+}
+//console.log(filteroperator,'t1',interfacefieldname,'t2',interfaceobjectname);
+for (var i=0;i<filteroperator.length;i++){
+	console.log('fefwef',val);
+	//if (interfacefieldname[i]&&interfaceobjectname[i]&& val[interfaceobjectname[i]]){
+query ='/services/data/v41.0/query/?q=select+'+ queryparams + '+from+'+interfaceobjectname[i]+'+Where+'+interfacefieldname[i]+'+'+filteroperator[i]+'+'+val[interfacefieldname[i]];
+console.log(query);
+	//}
+}
+};
+
+
+module.exports.extract=extract;
