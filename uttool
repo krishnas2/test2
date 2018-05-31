@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-App="utApp" ng-controller="utController" class="container" > <br />
+
+    <h1 >UT TOOL</h1>
+    <form class="form-horizontal"  role="form" >
+        <div class="form-group">
+            <label for="username" class="col-sm-3 control-label">Org Username</label>
+            <div class="col-sm-4">
+                <input type="text" id="firstName" class="form-control" ng-model="details.username" />
+            </div>
+            <div class="col-sm-3"></div>
+
+        </div>
+        <div class="form-group">
+            <label for="lastName" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-4">
+                <input type="password" id="lastName" class="form-control" ng-model="details.password" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label">Type</label>
+				<div class="col-sm-2">
+				 <select class="form-control" ng-model="selectedName" ng-options="x for x in names">
+					</select>
+				</div>
+				<div class="col-sm-3"></div>
+		</div>
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label">Object Name</label>
+				<div class="col-sm-4">
+				 <input type="name" id="objname" class="form-control" ng-model="details.objname" />
+				</div>
+				<div class="col-sm-3"></div>
+		</div>
+        <input type="submit" value="submit" class="btn btn-primary col-sm-offset-3" ng-click="sub()" /> 
+    </form>
+    <script>
+        var utApp = angular.module('utApp', []);
+        utApp.controller("utController", function ($scope, $http) {
+			$scope.sub = function() {
+			console.log($scope.details);
+			$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+			$http.post('/show_ut_results',$scope.details).
+					then(function(response) {
+						console.log("posted successfully");
+					}).catch(function(response) {
+						console.error("error in posting");
+					})
+			}
+			
+			$scope.names=['DataRaptor'];
+	});
+    </script>   
+</body>
+</html>
