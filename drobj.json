@@ -1,0 +1,178 @@
+[
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzcvQAA"
+    },
+    "vlocity_cmt__FilterOperator__c": "=",
+    "vlocity_cmt__FilterValue__c": "Id",
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "AccountId",
+    "vlocity_cmt__InterfaceObjectName__c": "Opportunity"
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzcwQAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:AccountId",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzcxQAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:CreatedDate",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzcyQAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:Description",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzczQAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:ExpectedRevenue",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd0QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:FiscalYear",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd1QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:IsClosed",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd2QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:IsDeleted",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd3QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:IsWon",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd4QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:Name",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd5QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:Id",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd6QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:Probability",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd7QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:Amount",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd8QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:StageName",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000mzd9QAA"
+    },
+    "vlocity_cmt__FilterOperator__c": null,
+    "vlocity_cmt__FilterValue__c": null,
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Opportunity:Type",
+    "vlocity_cmt__InterfaceObjectName__c": null
+  },
+  {
+    "attributes": {
+      "type": "vlocity_cmt__DRMapItem__c",
+      "url": "/services/data/v41.0/sobjects/vlocity_cmt__DRMapItem__c/a197F000000nrA7QAI"
+    },
+    "vlocity_cmt__FilterOperator__c": "=",
+    "vlocity_cmt__FilterValue__c": "Id",
+    "vlocity_cmt__FilterGroup__c": null,
+    "vlocity_cmt__InterfaceFieldAPIName__c": "Id",
+    "vlocity_cmt__InterfaceObjectName__c": "Account"
+  }
+]
