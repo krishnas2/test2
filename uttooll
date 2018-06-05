@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <style>
+
+.btn-bs-file input[type="file"]{
+    position: absolute;
+    top: -9999999;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    width:50;
+    height:50;
+    outline: none;
+    cursor: inherit;
+}
+  </style>
+</head>
+<body ng-App="utApp" ng-controller="utController" class="container" > <br />
+
+    <h1 >UT TOOL</h1>
+    <form class="form-horizontal" class="form-inline" role="form" >
+	<div class="h-100 w-75 bg-primary form-group" style="height:55px;width:1100px" ng-model="collapsed1" ng-click="collapsed1=!collapsed1"> 
+			<span><h3 text-align-left > <span class="glyphicon glyphicon-plus" ng-hide="collapsed1"> </span>
+				<span class="glyphicon glyphicon-minus" ng-show="collapsed1"> </span>
+			 Org Details</h3>
+			 </span>
+		</div>
+		<div ng-show="collapsed1"> 
+		<br>
+		<div class="form-group">
+		<label for="Upload Type" class="col-sm-3 control-label">Upload Type</label>
+				<div class="col-sm-4">
+				 <select class="form-control" ng-model="upldtype" ng-options="x for x in ['Upload','Formfilling']" required>
+				 <option value="">Select Type</option> 
+					</select>
+				</div>
+				<div class="col-sm-3"></div>
+		</div>
+
+		<div ng-show="upldtype=='Formfilling'">
+		<div class="form-group">
+            <label for="username" class="col-sm-3 control-label">Org Username</label>
+            <div class="col-sm-4">
+                <input type="text" id="firstName" class="form-control" ng-model="details.username" required="true"/>
+            </div>
+            <div class="col-sm-3"></div>
+
+        </div>
+        <div class="form-group">
+            <label for="Password" class="col-sm-3 control-label">Password</label>
+            <div class="col-sm-4">
+                <input type="password" id="Password" class="form-control" ng-model="details.password" required="true" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+		<div class="form-group">
+            <label for="clientid" class="col-sm-3 control-label">Client ID</label>
+            <div class="col-sm-4">
+                <input type="text" id="clientid" class="form-control" ng-model="details.clientid" required="true"/>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+		<div class="form-group">
+            <label for="secret" class="col-sm-3 control-label">Client secret</label>
+            <div class="col-sm-4">
+                <input type="text" id="secret" class="form-control" ng-model="details.clientsecret" required="true" />
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+		</div>
+	
+		<div ng-show="upldtype=='Upload'">
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label">Details</label>
+				<div class="col-sm-7 row-sm-5">
+				 <pre>{{ fileContent }}</pre>
+				</div>
+		</div>
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label"></label>
+				<div class="col-sm-7 row-sm-5">
+				 <div class="btn-bs-file btn btn-lg btn-primary">
+                <span>Choose file</span>
+                <input type="file" id="myFileInput" class="btn" ng-model="inptfile" onchange="angular.element(this).scope().submit()" />
+            </div>
+				</div>
+		</div>
+
+      </div>
+	  <div class="row">
+    <div class="col-xs-11">
+        <div class="text-right">
+            <button type="button" class="btn btn-primary" ng-click="collapsed2=true;collapsed1=false">Next</button>
+        </div>
+    </div>
+</div>
+		</div>
+		<br/><br/>
+		<div class="h-100 w-75 bg-primary form-group" style="height:55px;width:1100px" ng-model="collapsed2" ng-click="collapsed2=!collapsed2"> 
+			<span><h3 text-align-left > <span class="glyphicon glyphicon-plus" ng-hide="collapsed2"> </span>
+				<span class="glyphicon glyphicon-minus" ng-show="collapsed2"> </span>
+			 Environment Details</h3>
+			 </span>
+		</div>
+		<div ng-show="collapsed2"> 
+		
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label">Environment</label>
+				<div class="col-sm-4">
+					<div class="btn-group">
+						<label class="btn btn-primary btn-rounded"  btn-radio="'Production'">
+						 <input type="radio" ng-model="details.env" value="Production" ng-required="!details.env">
+							Production
+						</label>
+
+						<label class="btn btn-primary btn-rounded"  btn-radio="'Sandbox'">
+							<input type="radio" ng-model="details.env" value="Sandbox" ng-required="!details.env">
+							Sandbox
+						</label>
+
+					</div>
+				</div>
+				<div class="col-sm-3"></div>
+		</div>
+		<div class="row">
+				<div class="col-xs-11">
+					<div class="text-right">
+						<button type="button" class="btn btn-primary" ng-click="collapsed3=true;collapsed2=false">Next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/><br/>
+		<div class="h-100 w-75 bg-primary form-group" style="height:55px;width:1100px" ng-model="collapsed3" ng-click="collapsed3=!collapsed3"> 
+			<span><h3 text-align-left > <span class="glyphicon glyphicon-plus" ng-hide="collapsed3"> </span>
+				<span class="glyphicon glyphicon-minus" ng-show="collapsed3"> </span>
+			 Object Details</h3>
+			 </span>
+		</div>
+		<div ng-show="collapsed3">
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label">Type</label>
+				<div class="col-sm-4">
+				 <select class="form-control" ng-model="details.selectedName" ng-options="x for x in names" required>
+				 <option value="">Select Type</option> 
+					</select>
+				</div>
+				<div class="col-sm-3"></div>
+		</div>
+		<div class="form-group">
+		<label for="Type" class="col-sm-3 control-label">Object Name</label>
+				<div class="col-sm-4">
+				 <input type="name" id="objname" class="form-control" ng-model="details.objname"  required="true"/>
+				</div>
+				<div class="col-sm-3"></div>
+		</div>
+		
+		
+        <input type="submit" value="Submit" class="btn btn-primary col-sm-offset-4 " ng-click="sub()" ng-disabled="(details.username ==null)" /> 
+		</div>
+	
+	<script>
+        var utApp = angular.module('utApp', ['ui.bootstrap']);
+        utApp.controller("utController", function ($scope,$http) {
+			$scope.singleModel = 1;
+			$scope.details={};
+			$scope.details.env = 'Sandbox';
+			$scope.collapsed1=true;
+			
+			$scope.sub = function() {
+			console.log($scope.details);
+			$http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+			$http.post('/show_ut_results',$scope.details).
+					then(function(response) {
+						console.log("posted successfully");
+					}).catch(function(response) {
+						console.error("error in posting");
+					})
+			}
+			
+			$scope.names=['DataRaptor','OmniScript'];
+			$scope.uploadFile = function(element) {
+				$scope.test = element;
+				console.log(element);
+			  }
+			  
+			  $scope.fileContent = '';
+        $scope.fileSize = 0;
+        $scope.fileName = '';
+        $scope.submit = function () {
+          var file = document.getElementById("myFileInput").files[0];
+          if (file) {
+		  console.log(file);
+            var aReader = new FileReader();
+            aReader.readAsText(file, "UTF-8");
+            aReader.onload = function (evt) {
+                document.getElementById("myFileInput").innerHTML = evt.target.result;
+                $scope.fileContent = aReader.result;
+                $scope.fileName = document.getElementById("myFileInput").files[0].name;
+        				$scope.fileSize = document.getElementById("myFileInput").files[0].size;
+				var temp=JSON.parse(evt.target.result);
+				console.log(temp.username);
+				$scope.details.username=temp.username;
+				//$scope.details.password=temp.password;
+				//$scope.details.clientid=temp.clientid;
+				//$scope.details.clientsecret=temp.clientsecret;
+				//$scope.go($scope.current, {}, {reload: true}); 
+            }
+            aReader.onerror = function (evt) {
+                document.getElementById("myFileInput").innerHTML = "error";
+                $scope.fileContent = "error";
+            }
+          }
+        }
+	
+	});
+    </script>   
+</body>
+</html>
