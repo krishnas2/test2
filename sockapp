@@ -1,0 +1,114 @@
+// app.js
+var express = require('express');  
+var app = express();  
+var server = require('http').createServer(app);  
+var io = require('socket.io')(server);
+var bodyParser = require('body-parser');
+var querystring=require('querystring');
+var https=require('https');
+var username='';
+
+app.use(express.static(__dirname + '/node_modules'));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded());
+
+// parse application/json
+app.use(bodyParser.json());
+
+app.get('/', (req, res,next) => {  
+    res.sendFile(__dirname + '/login.html');
+});
+app.get('/index', (req, res,next) =>{  
+    res.sendFile(__dirname + '/index.html');
+});
+app.post('/', (req, res,next) =>{  
+//username=req.body.username;
+for (i in req.body){
+		i=JSON.parse(i);
+		username=i.username,
+		console.log(i.username);
+	}
+    res.send('/index');
+	res.end();
+});
+io.on('connection', (client)=> {  
+    console.log('Client connected...');
+	client.emit('username', username);
+    client.on('join', (data)=> {
+        console.log(data);
+		client.emit('broad', data);
+    });
+f='d';
+    client.on('joined', (data)=> {
+           client.emit('broad', Number(data)+10);
+           //client.broadcast.emit('broad',data);
+    });
+	client.on('sfdcdetails', (data)=> {
+           console.log('sfdc',data);
+		   console.log('came here1');
+		   client.emit('sfdccoms', 20);
+		   client.emit('sfdccomslog', '\nExecution Started');
+	var headers={
+		'Content-Type':'application/json'
+	},
+	data={
+		'grant_type':'password',
+		'client_id':data.clientid,
+		'client_secret':data.clientsecret,
+		'username':data.username,
+		'password':data.password
+	};
+	client.emit('sfdccoms', 30);
+	client.emit('sfdccomslog', 'Reading of Details is Done');
+	var host=data.env=="Production"?'login.salesforce.com':'test.salesforce.com',
+	endpoint = '/services/oauth2/token?'+querystring.stringify(data);
+	console.log(data['client_id'],data['username'],data['password']);
+	var options={
+		host:host,
+		port:null,
+		path:endpoint,
+		method:'POST',
+		headers:headers
+	};
+	console.log('came hhh');
+	client.emit('sfdccomslog', 'endpoint url is formed');
+	client.emit('sfdccoms', 40);
+	var req=https.request(options,function(res){
+		res.setEncoding('utf-8');
+		var responseString='';
+		client.emit('sfdccoms', 50);
+		res.on('data',function(respObj){
+			responseString+=respObj;
+		});
+		client.emit('sfdccoms', 70);
+		res.on('end',function(){
+			try{
+			console.log('rstring',responseString);
+			var responseObject=JSON.parse(responseString);
+			//console.log(responseObject);
+			access_token=responseObject.token_type+' '+responseObject.access_token;
+			instance_url=responseObject.instance_url.split('/')[2];
+			client.emit('sfdccoms', 100);
+			if(access_token)console.log('connection'+'established');
+			//getObjectDetails(v3,v4);
+			callback();
+			}
+			catch(e){
+				console.log('error',e);
+			}
+		});
+		
+	});
+	req.on('error',(e)=>{
+		console.log('problem'+e);
+	});
+	req.end();
+    });
+
+
+});
+io.on('joined', (data)=> {
+        console.log('joinout',data);
+
+    });
+server.listen(process.env.PORT || 4200); 
