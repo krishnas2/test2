@@ -1,0 +1,295 @@
+ARJUN
+
+Hi Rama,
+
+PFB the list of checks that need to be done on the Vlocity Objects. We are still working on Integration procedures and Omniscripts.
+We can classify the items in below list optional and mandatory so that they a CICD admin can choose to run Only Mandatory checks or can include optional checks as part of the Code Quality Check.
+
+Accordingly we can define a score against each objects and thus an overall Code Quality score.
+
+We can have a call to walkthrough on the below list.
+
+DataRaptor:
+1.	Salesforce Object Validation (Object Visibility, Object Permissions, Field Visibility, Field Permissions refer to the node "%vlocity_namespace%__CheckFieldLevelSecurity__c" in the dataraptor extract)
+2.	Presence of "%vlocity_namespace%__SampleInputJSON__c"  node in the DataRaptor extract and it being not null
+3.	When Load Raptor, 
+a.	then check if all the required fields are being populated
+b.	If at least one field is an Upsert Key which is not disabled
+4.	If a DataRaptor is used to insert objects like Cases / Incidents / Service Requests / Activities / Opportunities  then Use Assignment Rules flag has to be checked ( viz: when inserting any object with Assignment rules defined / Applicable)
+5.	When running the DataRaptor in a Batch Mode (if applicable) then Ignore Errors has to be recommended
+6.	When running the DataRaptor in transactional mode, Rollback On Error has to be recommended 
+7.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+ 
+Template
+1.	Ensure active version of the template is present.
+2.	Run JS validator, HTML Validator and CSS Validator on the template
+3.	Is a preview executed for the active version?
+4.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+5.	Validate any template references by identifying the tag/attribute: ng-include (all the validation of the template can be applicable to referred template as well)
+6.	The Controller Name in the HTML template should match the controller name on the JS of this template
+7.	Validate any static resources used
+8.	Can restrict the number of lines of comments in the template
+9.	Validate the use of any global variables, the use of merge codes for static binding and two-way binding (if recommended at solution level)
+10.	Recommend the use of SLDS based on the tags used: Eg: Buttons: slds-button etc
+ 
+Vlocity Card/Console
+1.	Is a Data Source set for the Card Layout?
+2.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+3.	Validate Vlocity Action used in the card.
+4.	Salesforce Object Validation (Object Visibility, Object Permissions, Field Visibility, Field Permissions)
+5.	Card and Card Layout template validation
+ 
+Vlocity Action
+1.	Is the Vlocity Action active?
+2.	Validate the fields: Display On, Open URL in, Link Type, Target URL and URL Parameter (if Target URL contains parameters), Display sequence
+
+
+
+ 
+Thanks
+Regards
+Arjun Otturu
+Mob : +61 469803165
+mailto:arjun.otturu@team.telstra.com
+
+
+From: Rao Ganapatineedi, Rama 
+Sent: 18 June 2018 15:57
+To: Otturu, Arjun <Arjun.Otturu@team.telstra.com>; Durvasula, Srujana <Srujana.Durvasula@team.telstra.com>
+Cc: Krishna Kanth Juluru <krishnakanth.juluru@infosys.com>
+Subject: RE: Non-Functional checks on Vlocity Objects
+
+Thanks Arjun. Let us start off with below list and I would like to add integration is a separate piece, not generic one but purely for vlocity specific
+
+Later we can add dependencies as well
+
+Regards
+Rama
+
+From: Otturu, Arjun 
+Sent: Monday, 18 June 2018 11:58 AM
+To: Durvasula, Srujana <Srujana.Durvasula@team.telstra.com>
+Cc: Rao Ganapatineedi, Rama <RamaRao.Ganapatineedi@team.telstra.com>
+Subject: Non-Functional checks on Vlocity Objects
+
+Hi Srujana,
+
+Rama is looking for basic Non-functional checks that would be good to run as a code quality check on below list of objects.
+We need to come up with the list of such checks. 3
+Few examples stated below:
+
+1.	DataRaptor
+Example: 
+Check1: Does Extract raptor have Extract Object and fields specified ?
+Check2: Is a success preview executed at least once ?
+2.	Template
+Example:
+Check1: Is the template active ?
+3.	Vlocity Card/Console
+4.	Vlocity Action
+5.	Integration Procedure
+6.	Omniscript
+
+@Rama: Please add any other objects to the list, if I had missed to highlight.
+
+ 
+Thanks
+Regards
+Arjun Otturu
+Mob : +61 469803165
+mailto:arjun.otturu@team.telstra.com
+
+ 
+Srujana
+
+Hi Rama,
+
+PFB the list of checks that need to be done on Integration procedures and Omniscripts.
+
+Integration Procedure
+1.      Is the IP version active?
+2.      Naming Convention validations (Project recommendations + Vlocity Recommendations)
+3.      When using DataRaptor Extract Action, if DataRaptor expects a filter, it has to be passed by the IP
+4.      When using DataRaptor Post Action, if DataRaptor expects a Payload, it has to be passed by the IP
+5.      Run all the IP checks on any IP referenced by the current IP using Integration Procedure Action
+6.      When using a Remote Action, the corresponding apex class (if not a managed class) can be validated for the presence of apex test class and code coverage
+7.      There should be atleast one response action
+8.      For a HTTP Action
+a.      The URL has to be registered in Remote Site Settings
+b.      If a Named Credential is used, then it has to be validated for a Valid Auth. Provider (if applicable)
+c.       Time Out, retries and Error handlers have to be configured based on the solution recommendations
+9.      Is a success preview executed at least once ?
+ 
+Omniscript
+1.       Is the Omniscript version active?
+2.      Naming Convention validations for Omniscript Header and Elements (Project recommendations + Vlocity Recommendations)
+3.      Ensure the child Omniscripts embedded and Integration Procedures have an active version.
+4.      Is there an active version of templates which are referred in the Omniscript?
+5.      To use a PDF Action, an existing fillable PDF must exist in Documents.
+6.      All IP checks are valid for Omniscript since IP is a server side version of Omniscript
+7.      Based on Solution level Standards validate below
+a.      Specific Templates for specific elements
+b.      Save Options
+c.       Any other configurations like a mandatory salutation page, Summary Page for any order, Validation Required Option to be set to Submit/step/none and Persistent components required on Reusable Omniscripts or Omniscripts
+8.      Run all checks for individual type of elements such as DataRaptor, IP or Reusable Omniscript
+
+
+Thanks,
+Srujana Durvasula.
+
+________________________________________
+From: Rao Ganapatineedi, Rama
+Sent: Monday, June 18, 2018 4:28 PM
+To: Otturu, Arjun; Krishna Kanth Juluru
+Cc: Durvasula, Srujana
+Subject: RE: Non-Functional checks on Vlocity Objects 
+ 
+Good Arjun. Let us classify as warnings and Errors. So that we can build rules around them
+ 
+ 
+ 
+From: Otturu, Arjun 
+Sent: Monday, 18 June 2018 4:26 PM
+To: Rao Ganapatineedi, Rama <RamaRao.Ganapatineedi@team.telstra.com>; Krishna Kanth Juluru <krishnakanth.juluru@infosys.com>
+Cc: Durvasula, Srujana <Srujana.Durvasula@team.telstra.com>
+Subject: RE: Non-Functional checks on Vlocity Objects
+ 
+Hi Rama,
+ 
+PFB the list of checks that need to be done on the Vlocity Objects. We are still working on Integration procedures and Omniscripts.
+We can classify the items in below list optional and mandatory so that they a CICD admin can choose to run Only Mandatory checks or can include optional checks as part of the Code Quality Check.
+ 
+Accordingly we can define a score against each objects and thus an overall Code Quality score.
+ 
+We can have a call to walkthrough on the below list.
+ 
+DataRaptor:
+1.       Salesforce Object Validation (Object Visibility, Object Permissions, Field Visibility, Field Permissions refer to the node "%vlocity_namespace%__CheckFieldLevelSecurity__c" in the dataraptor extract)
+2.       Presence of "%vlocity_namespace%__SampleInputJSON__c"  node in the DataRaptor extract and it being not null
+3.       When Load Raptor, 
+a.       then check if all the required fields are being populated
+b.      If at least one field is an Upsert Key which is not disabled
+4.       If a DataRaptor is used to insert objects like Cases / Incidents / Service Requests / Activities / Opportunities  then Use Assignment Rules flag has to be checked ( viz: when inserting any object with Assignment rules defined / Applicable)
+5.       When running the DataRaptor in a Batch Mode (if applicable) then Ignore Errors has to be recommended
+6.       When running the DataRaptor in transactional mode, Rollback On Error has to be recommended 
+7.       Naming Convention validations (Project recommendations + Vlocity Recommendations)
+ 
+Template
+1.      Ensure active version of the template is present.
+2.      Run JS validator, HTML Validator and CSS Validator on the template
+3.      Is a preview executed for the active version?
+4.      Naming Convention validations (Project recommendations + Vlocity Recommendations)
+5.      Validate any template references by identifying the tag/attribute: ng-include (all the validation of the template can be applicable to referred template as well)
+6.      The Controller Name in the HTML template should match the controller name on the JS of this template
+7.      Validate any static resources used
+8.      Can restrict the number of lines of comments in the template
+9.      Validate the use of any global variables, the use of merge codes for static binding and two-way binding (if recommended at solution level)
+10.  Recommend the use of SLDS based on the tags used: Eg: Buttons: slds-button etc
+ 
+Vlocity Card/Console
+1.      Is a Data Source set for the Card Layout?
+2.      Naming Convention validations (Project recommendations + Vlocity Recommendations)
+3.      Validate Vlocity Action used in the card.
+4.      Salesforce Object Validation (Object Visibility, Object Permissions, Field Visibility, Field Permissions)
+5.      Card and Card Layout template validation
+ 
+Vlocity Action
+1.      Is the Vlocity Action active?
+2.      Validate the fields: Display On, Open URL in, Link Type, Target URL and URL Parameter (if Target URL contains parameters), Display sequence
+ 
+ 
+ 
+ 
+Thanks
+Regards
+Arjun Otturu
+Mob : +61 469803165
+mailto:arjun.otturu@team.telstra.com
+ 
+ 
+From: Rao Ganapatineedi, Rama 
+Sent: 18 June 2018 15:57
+To: Otturu, Arjun <Arjun.Otturu@team.telstra.com>; Durvasula, Srujana <Srujana.Durvasula@team.telstra.com>
+Cc: Krishna Kanth Juluru <krishnakanth.juluru@infosys.com>
+Subject: RE: Non-Functional checks on Vlocity Objects
+ 
+Thanks Arjun. Let us start off with below list and I would like to add integration is a separate piece, not generic one but purely for vlocity specific
+ 
+Later we can add dependencies as well
+ 
+Regards
+Rama
+ 
+From: Otturu, Arjun 
+Sent: Monday, 18 June 2018 11:58 AM
+To: Durvasula, Srujana <Srujana.Durvasula@team.telstra.com>
+Cc: Rao Ganapatineedi, Rama <RamaRao.Ganapatineedi@team.telstra.com>
+Subject: Non-Functional checks on Vlocity Objects
+ 
+Hi Srujana,
+ 
+Rama is looking for basic Non-functional checks that would be good to run as a code quality check on below list of objects.
+We need to come up with the list of such checks. 3
+Few examples stated below:
+ 
+1.       DataRaptor
+Example: 
+Check1: Does Extract raptor have Extract Object and fields specified ?
+Check2: Is a success preview executed at least once ?
+2.       Template
+Example:
+Check1: Is the template active ?
+3.       Vlocity Card/Console
+4.       Vlocity Action
+5.       Integration Procedure
+6.       Omniscript
+ 
+@Rama: Please add any other objects to the list, if I had missed to highlight.
+ 
+ 
+Thanks
+Regards
+Arjun Otturu
+Mob : +61 469803165
+mailto:arjun.otturu@team.telstra.com
+ 
+ 
+RAMA
+
+Hi KK,
+
+   Good work on building this tool in quick notice and also being able to host on heroku as well . It helps us in demonstrating the tool to clients. Let us complete this tool in coming weeks so that it can be showcase to vlocity/Telstra as well.
+
+Let us try to include few more checks by tomorrow so that we can showcase this as part of the client visit in hyderbad.
+
+Matt,
+
+  I will upload the latest webex tonight or tomorrow once we add some more checks and as well as change few UI elements on the tool(ex : change logs messaging)
+
+Thanks,
+ 
+Rama Ganapatineedi 
+Consumer Services | Telstra Software Engineering
+M 0429535259 | E Ramarao.Ganapatineedi@team.telstra.com 
+
+
+
+From: Krishna Kanth Juluru [mailto:krishnakanth.juluru@infosys.com] 
+Sent: Monday, 18 June 2018 4:01 PM
+To: Rao Ganapatineedi, Rama <RamaRao.Ganapatineedi@team.telstra.com>
+Subject: RE: Sample Dataraptor with Preview parameters
+
+Hi Rama,
+
+Please Find attached JSON file that can be used for uploading org details.
+
+App is hosted at : https://kkj-uttestapp.herokuapp.com
+
+Source Code: https://github.com/krishnas2/testing
+
+NOTE: 
+1. I am able to overcome proxy issue as I have found a way to automatically deploy edited code to heroku by establishing link with github. As soon as code in github gets updated heroku app will be refreshed. 
+2. I am planning to migrate this to a new heroku domain with a meaningful name to website.
+
+Regards,
+KK
