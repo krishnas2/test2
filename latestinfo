@@ -1,0 +1,93 @@
+Hi Rama,
+
+PFB the classification as warnings and errors. Please let us know if you have any feedback.
+
+DataRaptor:
+Warning:
+a.	When Load Raptor, 
+i.	If at least one field is an Upsert Key which is not disabled
+b.	If a DataRaptor is used to insert objects like Cases / Incidents / Service Requests / Activities / Opportunities  then Use Assignment Rules flag has to be checked ( viz: when inserting any object with Assignment rules defined / Applicable)
+c.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+d.	When running the DataRaptor in a Batch Mode (if applicable) then Ignore Errors has to be recommended
+e.	When running the DataRaptor in transactional mode, Rollback On Error has to be recommended 
+ 
+Error:
+a.	Salesforce Object Validation (Object Visibility, Object Permissions, Field Visibility, Field Permissions refer to the node "%vlocity_namespace%__CheckFieldLevelSecurity__c" in the dataraptor extract)
+b.	Presence of "%vlocity_namespace%__SampleInputJSON__c"  node in the DataRaptor extract and it being not null
+c.	When Load Raptor, 
+i.	then check if all the required fields are being populated
+ 
+Template:
+Warning
+a.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+b.	Can restrict the number of lines of comments in the template
+c.	Validate the use of any global variables, the use of merge codes for static binding and two-way binding (if recommended at solution level)
+d.	Recommend the use of SLDS based on the tags used: Eg: Buttons: slds-button etc
+ 
+Error
+a.	Ensure active version of the template is present.
+b.	Run JS validator, HTML Validator and CSS Validator on the template
+c.	Is a preview executed for the active version?
+d.	Validate any template references by identifying the tag/attribute: ng-include (all the validation of the template can be applicable to referred template as well)
+e.	The Controller Name in the HTML template should match the controller name on the JS of this template
+f.	Validate any static resources used
+
+Vlocity Card/Console:
+Warning
+a.	Is a Data Source set for the Card Layout?
+b.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+ 
+Error
+a.	Validate Vlocity Action used in the card.
+b.	Salesforce Object Validation (Object Visibility, Object Permissions, Field Visibility, Field Permissions)
+c.	Card and Card Layout template validation
+ 
+Vlocity Action:
+Error
+a.	Is the Vlocity Action active?
+b.	Validate the fields: Display On, Open URL in, Link Type, Target URL and URL Parameter (if Target URL contains parameters), Display sequence
+ 
+Integration Procedure:
+ 
+Warning
+a.	Naming Convention validations (Project recommendations + Vlocity Recommendations)
+b.	There should be at least one response action
+c.	For a HTTP Action
+i.	Time Out, retries and Error handlers have to be configured based on the solution recommendations
+ 
+Error
+a.	Is the IP version active?
+b.	When using DataRaptor Extract Action, if DataRaptor expects a filter, it has to be passed by the IP
+c.	When using DataRaptor Post Action, if DataRaptor expects a Payload, it has to be passed by the IP
+d.	Run all the IP checks on any IP referenced by the current IP using Integration Procedure Action
+e.	When using a Remote Action, the corresponding apex class (if not a managed class) can be validated for the presence of apex test class and code coverage
+f.	For a HTTP Action
+i.	The URL has to be registered in Remote Site Settings
+ii.	If a Named Credential is used, then it has to be validated for a Valid Auth. Provider (if applicable, Auth Provider Apex Class has to have an apex test class and test coverage within minimum prescribed range)
+g.	Is a success preview executed at least once ?
+ 
+Omniscript:
+ 
+Warning
+a.	Naming Convention validations for Omniscript Header and Elements (Project recommendations + Vlocity Recommendations)
+b.	To use a PDF Action, an existing fillable PDF must exist in Documents.
+c.	All IP checks are valid for Omniscript since IP is a server side version of Omniscript
+d.	Based on Solution level Standards validate below
+i.	Specific Templates for specific elements
+ii.	Save Options
+iii.	Any other configurations like a mandatory salutation page, Summary Page for any order, Validation Required Option to be set to Submit/step/none and Persistent components required on Reusable Omniscripts or Omniscripts
+e.	Run all checks for individual type of elements such as DataRaptor, IP or Reusable Omniscript
+ 
+Error
+a.	 Is the Omniscript version active?
+b.	Ensure the child Omniscripts embedded and Integration Procedures have an active version.
+c.	Is there an active version of templates which are referred in the Omniscript?
+d.	All IP checks are valid for Omniscript since IP is a server side version of Omniscript
+e.	Run all checks for individual type of elements such as DataRaptor, IP or Reusable Omniscript
+
+ 
+Thanks
+Regards
+Arjun Otturu
+Mob : +61 469803165
+mailto:arjun.otturu@team.telstra.com
